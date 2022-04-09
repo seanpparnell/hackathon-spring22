@@ -35,12 +35,12 @@ const ServiceShow = ({ id, stype, cost, perks, updateService, deleteService }) =
           <button onClick={() => setEdit(true)}>Edit</button>
           <button onClick={() => deleteService(appointmentId, id)}>Delete</button>
           
-          {/* <Link
-            to={`/services/${id}/services`}
-            state={{ serviceId: id}}
+          <Link
+            to={`/services/${id}/notes`}
+            state={{ noteId: id}}
           >
-            Services
-          </Link> */}
+            Notes
+          </Link>
         </>
       }
     </>

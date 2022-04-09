@@ -9,6 +9,7 @@ import AuthProvider from './providers/AuthProvider';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppointmentProvider from './providers/AppointmentProvider';
 import ServiceProvider from './providers/ServiceProvider';
+import NoteProvider from './providers/NoteProvider'
 
 
 initMiddleware()
@@ -19,7 +20,9 @@ ReactDOM.render(
       <AuthProvider>
         <AppointmentProvider>
           <ServiceProvider>
+            <NoteProvider>
             <App />
+            </NoteProvider>
           </ServiceProvider>
         </AppointmentProvider>
       </AuthProvider>

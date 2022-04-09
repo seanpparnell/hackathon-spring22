@@ -9,6 +9,7 @@ import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Appointments from './components/appointments/Appointments';
 import Services from './components/services/Services';
+import Notes from './components/notes/Notes'
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
           <Route path='/' element={ <ProtectedRoute />}>
           <Route path='/appointments' element={ <Appointments /> } />
           <Route path='/appointments/:appointmentId/services' element={ <Services /> } />
+          <Route path='/services/:serviceId/notes' element={ <Notes /> } />
             {/* Your Protected routes go here */}
           </Route>
           <Route path='/login' element={ <Login /> } />

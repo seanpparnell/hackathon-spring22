@@ -10,5 +10,10 @@ Rails.application.routes.draw do
     resources :appointments, except: [:index, :show, :create, :destroy, :update] do
       resources :services
     end
+    resources :services, except: [:index, :show, :create, :destroy, :update] do
+      resources :notes
+    end
+    
   end
+
 end
