@@ -42,7 +42,7 @@ const MainNavbar = ({ user, handleLogout }) => {
     <>
       <Navbar collapseOnSelect expand="lg">
         <Container>
-          <Link to='/'><Navbar.Brand>Hackathon 2</Navbar.Brand></Link>
+          <Link to='/'><Navbar.Brand>VaxApp</Navbar.Brand></Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

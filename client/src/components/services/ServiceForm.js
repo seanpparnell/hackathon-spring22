@@ -37,45 +37,46 @@ const ServiceForm = ({ addService, setAdd, updateService, setEdit, setShow, styp
     <>
       
       {/* <h1>Add Adoption</h1> */}
-      <h1>{ id ? 'Update' : 'Create' } Service</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Type</Form.Label>
-          <Form.Control 
-            name='stype'
-            value={service.stype}
-            onChange={(e) => setService({ ...service, stype: e.target.value })}
-            type="text" 
-            placeholder="type" 
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Cost</Form.Label>
-          <Form.Control 
-            type="text"
-            name='cost'
-            value={service.cost}
-            onChange={(e) => setService({...service, cost: e.target.value})}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Perks</Form.Label>
-          <Form.Control 
-            type="text"
-            name='perks'
-            value={service.perks}
-            onChange={(e) => setService({...service, perks: e.target.value})}
-            required
-          />
-        </Form.Group>
-     
-      
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <Card style={{ width: '25rem', backgroundColor:'lightgreen', padding:'5px'} }>
+        <h1>{ id ? 'Update' : 'Create' } Service</h1>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Type</Form.Label>
+            <Form.Control
+              name='stype'
+              value={service.stype}
+              onChange={(e) => setService({ ...service, stype: e.target.value })}
+              type="text"
+              placeholder="type"
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Cost</Form.Label>
+            <Form.Control
+              type="text"
+              name='cost'
+              value={service.cost}
+              onChange={(e) => setService({...service, cost: e.target.value})}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Perks</Form.Label>
+            <Form.Control
+              type="text"
+              name='perks'
+              value={service.perks}
+              onChange={(e) => setService({...service, perks: e.target.value})}
+              required
+            />
+          </Form.Group>
+        
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Card>
     </>
   )
 }

@@ -37,36 +37,37 @@ const NoteForm = ({ addNote, setAdd, updateNote, setEdit, setShow, subject, body
     <>
       
       {/* <h1>Add Adoption</h1> */}
-      <h1>{ id ? 'Update' : 'Create' } Note</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Subject</Form.Label>
-          <Form.Control 
-            name='subject'
-            value={note.subject}
-            onChange={(e) => setNote({ ...note, subject: e.target.value })}
-            type="text" 
-            placeholder="subject" 
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Body</Form.Label>
-          <Form.Control 
-            type="textarea"
-            name='body'
-            value={note.body}
-            onChange={(e) => setNote({...note, body: e.target.value})}
-            required
-          />
+      <Card style={{ width: '25rem', backgroundColor:'lightblue', padding:'5px'} }>
+        <h1>{ id ? 'Update' : 'Create' } Note</h1>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Subject</Form.Label>
+            <Form.Control
+              name='subject'
+              value={note.subject}
+              onChange={(e) => setNote({ ...note, subject: e.target.value })}
+              type="text"
+              placeholder="subject"
+              required
+            />
           </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Body</Form.Label>
+            <Form.Control
+              type="textarea"
+              name='body'
+              value={note.body}
+              onChange={(e) => setNote({...note, body: e.target.value})}
+              required
+            />
+            </Form.Group>
         
-     
-      
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+        
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Card>
     </>
   )
 }

@@ -35,45 +35,46 @@ const AppointmentForm = ({ addAppointment, setAdd, updateAppointment, setEdit, s
     <>
       
       {/* <h1>Add Adoption</h1> */}
-      <h1>{ id ? 'Update' : 'Create' } Appt</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Location</Form.Label>
-          <Form.Control 
-            name='location'
-            value={appointment.appt_location}
-            onChange={(e) => setAppointment({ ...appointment, appt_location: e.target.value })}
-            type="text" 
-            placeholder="location" 
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Date</Form.Label>
-          <Form.Control 
-            type="date"
-            name='appt_date'
-            value={appointment.appt_date}
-            onChange={(e) => setAppointment({...appointment, appt_date: e.target.value})}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Time</Form.Label>
-          <Form.Control 
-            type="time"
-            name='appt_time'
-            value={appointment.appt_time}
-            onChange={(e) => setAppointment({...appointment, appt_time: e.target.value})}
-            required
-          />
-        </Form.Group>
-     
-      
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <Card style={{ width: '25rem', backgroundColor:'pink', padding:'5px'} }>
+        <h1>{ id ? 'Update' : 'Create' } Appt</h1>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Location</Form.Label>
+            <Form.Control
+              name='location'
+              value={appointment.appt_location}
+              onChange={(e) => setAppointment({ ...appointment, appt_location: e.target.value })}
+              type="text"
+              placeholder="location"
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Date</Form.Label>
+            <Form.Control
+              type="date"
+              name='appt_date'
+              value={appointment.appt_date}
+              onChange={(e) => setAppointment({...appointment, appt_date: e.target.value})}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Time</Form.Label>
+            <Form.Control
+              type="time"
+              name='appt_time'
+              value={appointment.appt_time}
+              onChange={(e) => setAppointment({...appointment, appt_time: e.target.value})}
+              required
+            />
+          </Form.Group>
+        
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Card>
     </>
   )
 }
