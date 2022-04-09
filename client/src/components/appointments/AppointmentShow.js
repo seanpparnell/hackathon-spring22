@@ -35,12 +35,12 @@ const AppointmentShow = ({ id, appt_location, appt_date, appt_time, updateAppoin
           <button onClick={() => setEdit(true)}>Edit</button>
           <button onClick={() => deleteAppointment(id)}>Delete</button>
           
-          {/* <Link 
-            to={`/appointments/${id}/shots`}
-            state={{ billboardId: id, billboardTitle: title}}
+          <Link
+            to={`/appointments/${id}/services`}
+            state={{ serviceId: id}}
           >
-            Shots
-          </Link> */}
+            Services
+          </Link>
         </>
       }
     </>

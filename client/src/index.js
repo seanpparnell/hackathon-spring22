@@ -8,6 +8,8 @@ import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppointmentProvider from './providers/AppointmentProvider';
+import ServiceProvider from './providers/ServiceProvider';
+
 
 initMiddleware()
 
@@ -16,7 +18,9 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <AppointmentProvider>
-          <App />
+          <ServiceProvider>
+            <App />
+          </ServiceProvider>
         </AppointmentProvider>
       </AuthProvider>
     </BrowserRouter>

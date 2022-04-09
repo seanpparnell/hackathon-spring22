@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :users, except: [:index, :show, :create, :destroy, :update] do
       resources :appointments
     end
+    resources :appointments, except: [:index, :show, :create, :destroy, :update] do
+      resources :services
+    end
   end
 end

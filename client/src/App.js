@@ -8,7 +8,7 @@ import Nomatch from './components/shared/Nomatch';
 import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Appointments from './components/appointments/Appointments';
-
+import Services from './components/services/Services';
 
 const App = () => (
   <>
@@ -19,6 +19,7 @@ const App = () => (
           <Route path='/' element={ <Home /> } />
           <Route path='/' element={ <ProtectedRoute />}>
           <Route path='/appointments' element={ <Appointments /> } />
+          <Route path='/appointments/:appointmentId/services' element={ <Services /> } />
             {/* Your Protected routes go here */}
           </Route>
           <Route path='/login' element={ <Login /> } />
