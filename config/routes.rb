@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :users, except: [:index, :show, :create, :destroy, :update] do
       resources :appointments
     end
-  
+  end
 end

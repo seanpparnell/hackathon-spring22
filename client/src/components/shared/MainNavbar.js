@@ -9,6 +9,11 @@ const MainNavbar = ({ user, handleLogout }) => {
       // this is links where you see once login in
       return (
         <>
+          <Nav.Link>
+            <Link to='/appointments'>
+              Appointments
+            </Link>
+          </Nav.Link>
           <Nav.Link onClick={() => handleLogout()}>
             Logout
           </Nav.Link>
