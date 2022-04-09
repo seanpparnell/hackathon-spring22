@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import ServiceShow from './ServiceShow';
 import { ServiceConsumer } from '../../providers/ServiceProvider';
 import { useEffect, useState } from 'react';
@@ -20,12 +20,20 @@ const ServiceList = ({ services, setServices, getAllServices, deleteServices }) 
 
   return ( 
     <>
-           { services.map( a => 
-            <ServiceShow 
-              key={a.id}
-              {...a}
-            />
-           )}
+           <Container>
+             <Row>
+               { services.map( a =>
+                <Col>
+                  <Card style={{ width: '14rem', backgroundColor: 'pink', margin:'10px', padding:'10px'}}>
+                    <ServiceShow
+                      key={a.id}
+                      {...a}
+                    />
+                  </Card>
+                </Col>
+               )}
+             </Row>
+           </Container>
     </>
   )}
   

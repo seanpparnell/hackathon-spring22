@@ -13,7 +13,7 @@ const ServiceShow = ({ id, stype, cost, perks, updateService, deleteService }) =
   const { appointmentId } = useParams()
   return (
     <>
-      <h2>Type: {stype}</h2>
+      <h2>{stype}</h2>
       <h4>Cost:{cost}</h4>
       <h4>Perks: {perks}</h4>
       {

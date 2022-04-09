@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { NoteConsumer } from "../../providers/NoteProvider";
-import { Row, Col, Modal, Button } from 'react-bootstrap';
+import { Row, Col, Modal, Button, Card, Container } from 'react-bootstrap';
 import NoteShow from './NoteShow'
 
 
@@ -15,12 +15,20 @@ const NoteList = ({ notes, getAllNotes, deleteNote }) => {
 
   return (
     <>
-      { notes.map( a => 
-        <NoteShow 
-        key={a.id}
-        {...a}
-      />
-      )}
+      <Container>
+        <Row>
+          { notes.map( a =>
+            <Col>
+              <Card style={{ width: '14rem', backgroundColor: '#64FCD9', margin:'10px', padding:'10px'}}>
+                <NoteShow
+                key={a.id}
+                {...a}
+                          />
+              </Card>
+            </Col>
+          )}
+        </Row>
+      </Container>
     </>
   )
 }

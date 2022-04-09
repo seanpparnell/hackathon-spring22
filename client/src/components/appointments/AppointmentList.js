@@ -1,8 +1,8 @@
-import { Container, Row, Col } from 'react-bootstrap';
+// import { Container, Row, Col } from 'react-bootstrap';
 import AppointmentShow from './AppointmentShow';
 import { AppointmentConsumer } from '../../providers/AppointmentProvider';
 import { useEffect, useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Card, Col } from 'react-bootstrap';
 // import AppointmentForm from './AppointmentForm';
 
 
@@ -19,12 +19,20 @@ const AppointmentList = ({ appointments, setAppointments, getAllAppointments, de
 
   return ( 
     <>
-           { appointments.map( a => 
-            <AppointmentShow 
-              key={a.id}
-              {...a}
-            />
-           )}
+           <Container>
+             <Row>
+               { appointments.map( a =>
+                <Col>
+                  <Card style={{ width: '14rem', backgroundColor: '#64FCD9', margin:'10px', padding:'10px'}}>
+                    <AppointmentShow
+                      key={a.id}
+                      {...a}
+                    />
+                  </Card>
+                </Col>
+               )}
+             </Row>
+           </Container>
     </>
   )}
   

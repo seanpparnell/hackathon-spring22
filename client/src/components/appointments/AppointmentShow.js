@@ -13,7 +13,7 @@ const AppointmentShow = ({ id, appt_location, appt_date, appt_time, updateAppoin
 
   return (
     <>
-      <h2>location: {appt_location}</h2>
+      <h2>{appt_location}</h2>
       <h4>date:{appt_date}</h4>
       <h4>time: {appt_time}</h4>
       {
