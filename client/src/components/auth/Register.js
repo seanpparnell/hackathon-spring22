@@ -1,46 +1,67 @@
 import { useState } from 'react';
-import { AuthConsumer } from '../../providers/AuthProvider';
+import { AuthConsumer } from "../../providers/AuthProvider";
 
 const Register = ({ handleRegister }) => {
-  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' })
-
+  const [user, setUser] = useState({ email: '', first_name: '', last_name: '', password: '', passwordConfirmation: '' }) 
+  
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (user.password === user.passwordConfirmation) {
-      handleRegister(user)
-      setUser({ email: '', password: '', passwordConfirmation: '' })
-    } else {
-      alert('Password Does Not Match')
-    }
+      handleRegister(user);
+     } else {
+      alert('Passwords Do Not Match!')
+     }
   }
-
+  
   return (
     <>
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
-        <input 
-          type='email'
+        <label>Email</label>
+        <input
+          type="email"
           required
+          autoFocus
           name='email'
           value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
           placeholder='Email'
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
-        <input 
-          type='password'
+        <label>First Name</label>
+        <input
+          type="text"
+          required
+          name='first_name'
+          value={user.first_name}
+          placeholder='First Name'
+          onChange={(e) => setUser({ ...user, first_name: e.target.value })}
+        />
+        <label>Last Name</label>
+        <input
+          type="last_name"
+          required
+          name='last_name'
+          value={user.last_name}
+          placeholder='Last Name'
+          onChange={(e) => setUser({ ...user, last_name: e.target.value })}
+        />
+        <label>Password</label>
+        <input
           required
           name='password'
           value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder='Password'
-        />
-        <input 
           type='password'
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
+        />
+        <label>Password Confirmation</label>
+        <input
           required
           name='passwordConfirmation'
           value={user.passwordConfirmation}
-          onChange={(e) => setUser({ ...user, passwordConfirmation: e.target.value })}
           placeholder='Password Confirmation'
+          type='password'
+          onChange={(e) => setUser({ ...user, passwordConfirmation: e.target.value })}
         />
         <button type='submit'>Submit</button>
       </form>
@@ -50,7 +71,7 @@ const Register = ({ handleRegister }) => {
 
 const ConnectedRegister = (props) => (
   <AuthConsumer>
-    { value => <Register {...props} {...value} />}
+    { value => <Register { ...props } {...value} /> }
   </AuthConsumer>
 )
 

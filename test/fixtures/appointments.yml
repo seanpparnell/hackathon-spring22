@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appt_location: MyString
+  appt_date: 2022-04-09 10:11:55
+  appt_time: 2022-04-09 10:11:55
+  user: one
+
+two:
+  appt_location: MyString
+  appt_date: 2022-04-09 10:11:55
+  appt_time: 2022-04-09 10:11:55
+  user: two
